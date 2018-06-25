@@ -5,11 +5,16 @@
     <title>bu benim blog sitem</title>
 </head>
 <body>
-<h1>MERHABA BLOG SİTEME HOŞ GELDİNİZ</h1>
-<P>Bugün stajımın 11. günü ve bu benim ilk blog sitem</P>
-<h2>HTML İLE İLK TANIŞMA</h2>
-<P>Bugün ilk kez html  ile tanıştım ve bunlar benim ilk html dili ile  yazdığım kodlardır </P>
-<p>Şimdi  html  üzerine  araştırma ve çalışma yapıyorum  bazı uygulamaar yapmaya çalışıyorum html işaretleme diline aşina olabilmek için </p>
+<div>
+    <h1><a href="/">Siteme Hoşgeldiniz</a></h1>
+</div>
 
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
